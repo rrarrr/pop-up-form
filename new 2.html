@@ -1,0 +1,98 @@
+<html>
+<head>
+<link rel="stylesheet" href="new3.css">
+<title>Create popup form using html css and javascript</title>
+<style>
+*{
+box-sizing:border-box;
+}
+body{
+background:url("file:///C:/Users/LENOVO/Desktop/front-view-kid-playing-with-wooden-toyds.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+height:100vh;
+}
+.open-button{
+background-color:#1ef;
+color:white;
+padding:10px 10px;
+border:none;
+position:fixed;
+opacity:0.8;
+cursor:pointer;
+width:300px;
+font-size:20px;
+top:15%;
+left:40%;
+}
+.form-popup{
+display:none;
+position:fixed;
+border:3px solid #f2f1d1;
+z-index:9;
+top:60px;
+left:150px;
+padding:15px;
+align:center;
+transition: all 5s ease-in-out;
+background-color:#fff;
+}
+.form-container
+input[type=text],
+.form-container
+input[type=password]{
+width:100%;
+padding:20px;
+margin:10px 0 10px 0;
+border:none;
+background:#f1d1f1;
+
+}
+.form-container
+<input[type=text]:focus, .form-container input[type=password]:focus{
+background-color:#adf;
+outline:none;
+}
+.form-container .btn{
+background-color:#04aa6d;
+color:white;
+border:none;
+padding:10px 10px;
+width:100%;
+opacity:0.8;
+margin-bottom:10px;
+}
+.form-container.btn:hover, open-button:hover{
+opacity:1;
+}
+.form-container .cancel{
+background-color:red;
+}
+
+</style>
+</head>
+<body>
+<h1 style="color:white; text-align:center;">Pop-up form</h1>
+<button class="open-button" onclick="openForm()">open form</button>
+<div class="form-popup" id="myForm">
+<form action="action_page.php" class="form-container">
+<h1>login</h1>
+<label for="email"><b>Email</b></label>
+<input type="text" placeholder="Enter Email" name="email" required>
+<label for="psw"><b>password</b></label>
+<input type="text" placeholder="Enter Password" name="psw" required>
+<button type="submit" class="btn">Login</button>
+<button type="submit" class="btn cancel" onclick="closeForm()">close</button>
+<a href="#" >Forget password?</a>
+</form>
+</div>
+<script>
+function openForm(){
+document.getElementById("myForm").style.display="block";
+}
+function closeForm(){
+document.getElementById("myForm").style.display="none";
+}
+</script>
+</body>
+</html>
